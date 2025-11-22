@@ -1,30 +1,39 @@
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
-
-int iter_collatz(int k,int a){
-    while(k != 0){\
-    if(a % 2 == 0){
-        a = a/2;
-    }else{
-        a = 3*a + 1;
+/*bool collatz(int a,int iterations,int c){
+    int b = a;
+    bool pass = true;
+    while(iterations--){
+        if(b%2 == 0){
+            b = 2*b;
+        }else{
+            b = 3*b + 1;
+        }
     }
-    k--;
-  }
-   return a;
+    if(c != b){
+        pass = false;
+    }
+    return pass;
+}*/
+
+int initval(int a,int b){
+    int ans = -1;
+    if(a <= 10 && b <= 10){
+        ans = 2*pow(2,a);
+    }
+    return ans;
 }
 
-int main(void){
-    int N,x,y;
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int N,a,b;
     cin>>N;
-    vector<int> vx,vy;
-    for(int i = 0;i<N;i++){
-        cin>>x>>y;
-        vx.push_back(x);
-        vy.push_back(y);
-    }
-    for(int i = 0;i<N;i++){
-        cout<<iter_collatz(vx[i],vy[i])<<'\n';
+    //cout<<collatz(5,6,512);
+    while(N--){
+        cin>>a>>b;
+        cout<< initval(a,b)<<'\n';
     }
     return 0;
-} 
+}
