@@ -1,19 +1,12 @@
 #include <iostream>
-#include <algorithm>
-#include <vector>
+#include <set>
 using namespace std;
 
-vector<int> counter(vector<int> b){
-    
-}
-
-
 int main(){
-    int b;vector<int> v;
-    for(int i =0;i<4;i++){
-        cin>>b;
-        v.push_back(b);
-    }
-    
+    int a,b,c,d;
+    cin>>a>>b>>c>>d;
+    set<int> s;
+    s.insert(a);s.insert(b);s.insert(c);s.insert(d);
+    cout<<4-s.size();
     return 0;
 }
