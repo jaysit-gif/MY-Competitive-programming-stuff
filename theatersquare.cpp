@@ -1,22 +1,13 @@
 #include <iostream>
 
-#define ull unsigned long long
-
-ull gcd(ull a,ull b){
-    if(b == 0){
-        return a;
-    }
-    return gcd(b,a%b);
+unsigned long long xpx(unsigned long long a, unsigned long long b, unsigned long long c) {
+    return ((a + c - 1ULL) / c) * ((b + c - 1ULL) / c);
 }
 
-ull no_tiles(ull a,ull b,ull c){
-    return (a*b)/(c*c);
-}
-
-int main(){
-    ull a,b,c,k;
-    std::cin>>a>>b>>c;
-    k = no_tiles(a,b,c);
-    std::cout<<k;
+int main() {
+    unsigned long long a, b, c, k;
+    std::cin >> a >> b >> c;
+    k = xpx(a, b, c);
+    std::cout << k;
     return 0;
 }
