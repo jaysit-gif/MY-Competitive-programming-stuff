@@ -5,6 +5,7 @@ using namespace std;
 #define nl "\n"
 typedef vector<int> vi;
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
+typedef set<int> si;
 
 class Solution{
     public:
