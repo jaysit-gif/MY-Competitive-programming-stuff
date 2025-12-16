@@ -2,34 +2,14 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-#pragma GCC optimize ("O3")
-#pragma GCC target("sse4")
-#define nl "\n"
-typedef vector<int> vi;
-#define FOR(i, a, b) for (int i=a; i<(b); i++)
-typedef set<int> si;
-
-class Solution{
-    public:
-    void solve(){
-        int a,b;
-        cin>>a>>b;
-        if(b%2 !=0){
-            cout<<a<<nl;
-        }else{
-            cout<<0<<nl;
-        }
-    }
-}; 
 
 int main(){
     ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-    Solution s;
-    int N = 1;
-    cin>>N;
+    int a,b,N;
+    scanf("%d",&N);
     while(N--){
-        s.solve();
+      scanf("%d %d",&a,&b);
+        printf("%d\n",a*(1 & b));
     }
     return 0;
 }
