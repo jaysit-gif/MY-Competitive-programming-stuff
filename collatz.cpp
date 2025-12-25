@@ -1,39 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
-/*bool collatz(int a,int iterations,int c){
-    int b = a;
-    bool pass = true;
-    while(iterations--){
-        if(b%2 == 0){
-            b = 2*b;
-        }else{
-            b = 3*b + 1;
-        }
-    }
-    if(c != b){
-        pass = false;
-    }
-    return pass;
-}*/
+#pragma GCC optimize ("O3")
+#pragma GCC target("sse4")
+#define nl "\n"
+#define ull unsigned long long int
+#define ld long double
+typedef vector<int> vi;
+#define FOR(i, a, b) for (int i=a; i<(b); i++)
+typedef set<int> si;
 
-int initval(int a,int b){
-    int ans = -1;
-    if(a <= 10 && b <= 10){
-        ans = 2*pow(2,a);
+class Solution{
+    public:
+    void solve(){
+        int k,x,ans;
+        cin>>k>>x;
+        ans = x*pow(2,k);
+        cout<<ans<<nl;
     }
-    return ans;
-}
-
+}; 
 
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int N,a,b;
+    Solution s;
+    int N = 1;
     cin>>N;
-    //cout<<collatz(5,6,512);
     while(N--){
-        cin>>a>>b;
-        cout<< initval(a,b)<<'\n';
+        s.solve();
     }
     return 0;
 }
