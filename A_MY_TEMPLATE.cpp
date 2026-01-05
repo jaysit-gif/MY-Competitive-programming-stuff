@@ -3,7 +3,7 @@ using namespace std;
 #pragma GCC optimize ("O3")
 #pragma GCC target("sse4")
 #define nl "\n"
-#define ull usigned long long int
+#define ull unsigned long long int
 typedef vector<int> vi;
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
 #define F0R(i,a,b) for(size_t i = 0;i<b;i++)
