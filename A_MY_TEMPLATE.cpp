@@ -6,7 +6,7 @@ using namespace std;
 #define ull unsigned long long int
 typedef vector<int> vi;
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
-#define FOR(n) for(int i = 0;i<n;i++)
+#define fr(n) for(int i = 0;i<n;i++)
 typedef set<int> si;
 
 class Solution{
