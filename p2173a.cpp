@@ -25,7 +25,7 @@ class Solution{
                     ans++;
                 }
             }
-        }//is this O(n) algo
+        }
         cout<<ans<<nl;
     }
 }; 
