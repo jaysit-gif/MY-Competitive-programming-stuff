@@ -1,3 +1,5 @@
+//codeforces.com/problemset/problem/2180/A
+
 #include <bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize ("O3")
@@ -10,16 +12,15 @@ typedef set<int> si;
 class Solution{
     public:
     void solve(){
-        si s;
+        vi s;
         int l,a,b;
         cin>>l>>a>>b;
-        int n = l;
-        while (n--)
-        {
-            a += b;
-            s.insert(a%l);
+        int mx = a;
+        FOR(i,0,l){
+            a = (a+b)%l;
+            mx = max(mx,a);
         }
-        cout<<*max_element(s.begin(),s.end())<<nl;
+        cout<<mx<<nl;
     }
 }; 
 
