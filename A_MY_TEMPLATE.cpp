@@ -10,6 +10,7 @@ typedef vector<long long> vl;
 typedef set<int> si;
 typedef long long ll;
 #define el endl;
+#define r return
 
 class Solution{
     public:
