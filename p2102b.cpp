@@ -9,6 +9,9 @@ typedef vector<int> vi;
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
 typedef set<int> si;
 
+#define yes "YES\n"
+#define no "NO\n"
+
 class Solution{
     public:
     int median(vi v){
@@ -21,15 +24,16 @@ class Solution{
         cin>>n;
         FOR(i,0,n){
             cin>>a;
-            v.push_back(a);
+            v.push_back(abs(a));
         }
-        FOR(i,0,v.size()){
-            v[i] = abs(v[i]);
+        int c = 0;
+        FOR(i,0,n){
+            c += (v[i]>v[0]);
         }
-        if(v[0] <= median(v)){
-            cout<<"YES\n";
+        if(c>= ((n-1)/2)){
+            cout<<yes;
         }else{
-            cout<<"NO\n";
+            cout<<no;
         }
     }
 
