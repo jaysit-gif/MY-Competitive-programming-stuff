@@ -1,55 +1,46 @@
 #include <bits/stdc++.h>
 using namespace std;
+#pragma GCC optimize ("O3")
+#pragma GCC target("sse4")
+#define nl "\n"
+#define ull unsigned long long int
+typedef vector<int> vi;
+typedef vector<long long> vl;
+#define FOR(i, a, b) for (int i=a; i<(b); i++)
+typedef set<int> si;
+typedef long long ll;
+#define el endl;
+#define r return
 
 class Solution{
-    private:
-
-    int adder(vector<int> v,int i,int j){
-        if(i < j){
-            if(v[i]>v[j]){
-                return 1;
-            }else{
-                return 0;
-            }
-        }
-        return 0;
-    }
-
-
-    int solver(vector<int> v,int n){
-        if(n == 1){
-            return 0;
-        }
-        int c = 0;
-        for(int i = n-1;i>1;i--){
-            for(int j = 0;j<i;j++){
-                c += adder(v,i,j);
-            }
-        }
-        return c;
-    }
     public:
     void solve(){
-        vector<int> v;
-        int a,n;
+        vi v;int n,a;
         cin>>n;
-        for(int i = 0;i<n;i++){
+        FOR(i,0,n){
             cin>>a;
             v.push_back(a);
         }
-        int ans = solver(v,n);
-        cout<<ans<<'\n';
+        int m = 0;int c = 0;
+
+        FOR(i,0,n){
+            m = max(m,v[i]);
+            if(m == v[i]){
+                c++;
+            }
+        }
+        cout<<n-c<<nl;
     }
-};
+}; 
 
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    Solution b;
-    int N;
+    Solution s;
+    int N = 1;
     cin>>N;
     while(N--){
-        b.solve();
+        s.solve();
     }
     return 0;
 }
