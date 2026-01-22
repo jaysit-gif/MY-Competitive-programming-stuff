@@ -16,11 +16,11 @@ class Solution{
     bool comp(int a,char b,int c){
         bool t = true;
         if(b == '='){
-            t = a == b;
+            t = a == c;
         }else if(b == '>'){
-            t = a>b;
+            t = a>c;
         }else if(b == '<'){
-            t = a<b;
+            t = a<c;
         }
         return t;
     }
@@ -28,10 +28,12 @@ class Solution{
     void solve(){
         int a,c;char b;
         cin>>a>>b>>c;
-        char v[3] = {'=','<','>'};int i = 0;
-        while(!comp(a,b,c)){
-            b = v[i];
-            i++;
+        char v[3] = {'=','<','>'};
+        FOR(i,0,3){
+            if(comp(a,v[i],c)){
+                b = v[i];
+                break;
+            }
         }
         cout<<a<<b<<c<<nl;
     }

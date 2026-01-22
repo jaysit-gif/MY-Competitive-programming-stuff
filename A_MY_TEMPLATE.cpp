@@ -5,6 +5,7 @@ using namespace std;
 #define nl "\n"
 #define ull unsigned long long int
 typedef vector<int> vi;
+typedef vector<string> vs;
 typedef vector<long long> vl;
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
 typedef set<int> si;
