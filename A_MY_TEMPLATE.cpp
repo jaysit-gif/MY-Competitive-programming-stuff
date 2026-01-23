@@ -17,6 +17,9 @@ istream& operator>>(istream& is,vector<T>& v);
 template <typename T>
 ostream& operator<<(ostream& os,vector<T>& v);
 
+#define yes "YES\n"
+#define no "NO\n"
+
 
 class Solution{
     public:
