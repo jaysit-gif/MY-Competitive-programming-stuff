@@ -5,24 +5,38 @@ using namespace std;
 #define nl "\n"
 #define ull unsigned long long int
 typedef vector<int> vi;
+typedef vector<string> vs;
+typedef vector<long long> vl;
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
 typedef set<int> si;
 typedef long long ll;
+#define el endl;
+
+template <typename T>
+istream& operator>>(istream& is,vector<T>& v);
+template <typename T>
+ostream& operator<<(ostream& os,vector<T>& v);
+
+#define yes "YES\n"
+#define no "NO\n"
+
 
 class Solution{
     public:
     void solve(){
         int n,a;
         cin>>n>>a;
-        int b;
-        int l = 0;
-        int r = 0;
+        vi v(n);cin>>v;
+        int l = 0;int r = 0;
         FOR(i,0,n){
-            cin>>b;
-            if(a>b) l++;
-            if(a<b) r++;
+            if(a>v[i]){
+                l++;
+            }
+            if(a<v[i]){
+                r++;
+            }
         }
-        cout << (l > r ? a - 1 : a + 1) << nl;
+        cout<<(l>r ? a-1:a+1)<<nl;
     }
 }; 
 
@@ -36,4 +50,30 @@ int main(){
         s.solve();
     }
     return 0;
+}
+
+template <typename T>
+ostream& operator<<(ostream& os,vector<T>& v){
+    size_t n = v.size();
+    if(n == 0){
+        cerr<<"ERROR VECTOR SIZE IS ZERO";//how will the func exit if n = 0f??
+    }
+    for(size_t i = 0;i<n;i++){
+        os<<v[i]<<' ';
+    }
+    return os;
+
+}
+
+template <typename T>
+istream& operator>>(istream& is,vector<T>& v){
+    size_t n = v.size();
+    if(n == 0){
+        cerr<<"ERROR VECTOR SIZE IS ZERO";
+        return is;
+    }
+    for(size_t i = 0;i<n;i++){
+        is>>v[i];
+    }
+    return is;
 }
