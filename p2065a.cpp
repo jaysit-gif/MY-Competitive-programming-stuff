@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+#pragma GCC optimize ("O3")
+#pragma GCC target("sse4")
+#define nl "\n"
+#define ull unsigned long long int
+typedef vector<int> vi;
+typedef vector<long long> vl;
+#define FOR(i, a, b) for (int i=a; i<(b); i++)
+typedef set<int> si;
+typedef long long ll;
+#define el endl;
+#define r return
+
+class Solution{
+    public:
+    void solve(){
+        string s;
+        cin>>s;
+        reverse(s.begin(),s.end());
+        if(s[0] == 's' && s[1] == 'u'){
+            s[0] = '\n';s[1] = 'i';
+        }
+        reverse(s.begin(),s.end());
+        cout<<s;
+    }
+}; 
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    Solution s;
+    int N = 1;
+    cin>>N;
+    while(N--){
+        s.solve();
+    }
+    return 0;
+}
