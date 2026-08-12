@@ -1,3 +1,5 @@
+// https://codeforces.com/problemset/problem/
+
 #include <bits/stdc++.h>
 using namespace std;
 #pragma GCC optimize ("O3")
@@ -17,8 +19,8 @@ istream& operator>>(istream& is,vector<T>& v);
 template <typename T>
 ostream& operator<<(ostream& os,vector<T>& v);
 
-#define yes "YES\n"
-#define no "NO\n"
+#define yes cout<<"YES\n"
+#define no cout<<"NO\n"
 
 static uint64_t splitmix64(uint64_t x) {
     // http://xorshift.di.unimi.it/splitmix64.c
