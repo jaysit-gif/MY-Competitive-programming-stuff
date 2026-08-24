@@ -1,4 +1,6 @@
-// https://codeforces.com/problemset/problem/
+
+// https://codeforces.com/contest/1878/problem/A
+
 
 #include <bits/stdc++.h>
 using namespace std;
@@ -42,7 +44,18 @@ struct custom_hash {
 class Solution{
     public:
     void solve(){
-        
+        int n,k;
+        cin>>n>>k;
+        vi v(n);
+        cin>>v;
+        for(int x:v){
+            if(x == k){
+                yes;
+                return;
+            }
+        }
+        no;
+        return;
     }
 }; 
 

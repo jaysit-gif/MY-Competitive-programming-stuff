@@ -1,0 +1,109 @@
+
+// https://codeforces.com/problemset/problem/1873/C
+
+#include <bits/stdc++.h>
+using namespace std;
+#pragma GCC optimize ("O3")
+#pragma GCC target("sse4")
+#define nl "\n"
+#define ull unsigned long long int
+typedef vector<int> vi;
+typedef vector<string> vs;
+typedef vector<long long> vl;
+#define FOR(i, a, b) for (int i=a; i<(b); i++)
+typedef set<int> si;
+typedef long long ll;
+#define el endl;
+
+template <typename T>
+istream& operator>>(istream& is,vector<T>& v);
+template <typename T>
+ostream& operator<<(ostream& os,vector<T>& v);
+
+#define yes cout<<"YES\n"
+#define no cout<<"NO\n"
+
+static uint64_t splitmix64(uint64_t x) {
+    // http://xorshift.di.unimi.it/splitmix64.c
+    x += 0x9e3779b97f4a7c15;
+    x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
+    x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
+    return x ^ (x >> 31);
+}
+
+static const uint64_t FIXED_RANDOM = 10;//chrono::steady_clock::now().time_since_epoch().count();
+
+struct custom_hash {
+    size_t operator()(uint64_t x) const {
+        return splitmix64(x + FIXED_RANDOM);
+    }
+};
+
+int score[10][10] = {
+	{1,1,1,1,1,1,1,1,1,1},
+	{1,2,2,2,2,2,2,2,2,1},
+	{1,2,3,3,3,3,3,3,2,1},
+	{1,2,3,4,4,4,4,3,2,1},
+	{1,2,3,4,5,5,4,3,2,1},
+	{1,2,3,4,5,5,4,3,2,1},
+	{1,2,3,4,4,4,4,3,2,1},
+	{1,2,3,3,3,3,3,3,2,1},
+	{1,2,2,2,2,2,2,2,2,1},
+	{1,1,1,1,1,1,1,1,1,1}
+};
+
+
+class Solution{
+    public:
+    void solve(){
+        int c = 0;
+        for(int i = 0;i<10;i++){
+            for(int j = 0;j<10;j++){
+                char s;
+                cin>>s;
+                if(s == 'X'){
+                    c += score[i][j];
+                }
+            }
+        }
+        cout<<c<<nl;
+    }
+}; 
+
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    Solution s;
+    int N = 1;
+    cin>>N;
+    while(N--){
+        s.solve();
+    }
+    return 0;
+}
+
+template <typename T>
+ostream& operator<<(ostream& os,vector<T>& v){
+    size_t n = v.size();
+    if(n == 0){
+        cerr<<"ERROR VECTOR SIZE IS ZERO";//how will the func exit if n = 0??
+    }
+    for(size_t i = 0;i<n;i++){
+        os<<v[i]<<' ';
+    }
+    return os;
+
+}
+
+template <typename T>
+istream& operator>>(istream& is,vector<T>& v){
+    size_t n = v.size();
+    if(n == 0){
+        cerr<<"ERROR VECTOR SIZE IS ZERO";
+        return is;
+    }
+    for(size_t i = 0;i<n;i++){
+        is>>v[i];
+    }
+    return is;
+}
