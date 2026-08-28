@@ -43,9 +43,13 @@ struct custom_hash {
 class Solution{
     public:
     void solve(){
-        vi v(4);
-        cin>>v;
-        
+        int a,b,c,d;
+        cin>>a>>b>>c>>d;
+        if(b<=d && c<=a+b-d){
+            cout<<(d-b)+(a+d-b-c)<<nl;
+        }else{
+            cout<<-1<<nl;
+        }
     }
 }; 
 
