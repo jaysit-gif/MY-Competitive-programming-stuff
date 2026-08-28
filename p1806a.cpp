@@ -45,7 +45,7 @@ class Solution{
     void solve(){
         int a,b,c,d;
         cin>>a>>b>>c>>d;
-        if(b<=d && c<=a+b-d){
+        if(b<=d && c<=a+d-b){
             cout<<(d-b)+(a+d-b-c)<<nl;
         }else{
             cout<<-1<<nl;
