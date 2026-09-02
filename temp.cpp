@@ -11,7 +11,7 @@ typedef vector<string> vs;
 typedef vector<bool> vb;
 typedef vector<long long> vl;
 #define FOR(i, a, b) for (int i=a; i<(b); i++)
-typedef set<int> si;
+typedef unordered_set<int> si;
 typedef long long ll;
 #define el endl;
 
