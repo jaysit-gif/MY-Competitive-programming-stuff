@@ -63,7 +63,7 @@ template <typename T>
 ostream& operator<<(ostream& os,vector<T>& v){
     size_t n = v.size();
     if(n == 0){
-        cerr<<"ERROR VECTOR SIZE IS ZERO";//how will the func exit if n = 0??
+        cerr<<"ERROR VECTOR SIZE IS ZERO";
     }
     for(size_t i = 0;i<n;i++){
         os<<v[i]<<' ';
