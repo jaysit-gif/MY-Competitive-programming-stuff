@@ -1,0 +1,24 @@
+# Compiled binaries and object files
+a.out
+*.exe
+*.o
+*.obj
+*.out
+*.app
+*.class
+*.so
+*.dll
+*.dylib
+
+# Debug / profiling leftovers
+*.dSYM/
+*.gch
+*.pch
+*.stackdump
+
+# Editor / OS
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
